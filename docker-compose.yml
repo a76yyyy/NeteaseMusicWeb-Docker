@@ -5,13 +5,19 @@ services:
     build: 
       context: .
       args:
-        - BACKSCHEME=http
-        - BACKPORT=3000
-        - BACKURL=localhost:3000
+        - API_SCHEME=http
+        - API_URL=localhost:3000
+        # - GHPROXY=https://ghproxy.com/
     container_name: netease
     ports:
-      - "3000:3000"
       - "6688:6688"
     environment:
-      - FRONTPORT=6688
-      # - GHPROXY=https://ghproxy.com/
+      - PORT=6688
+    depends_on:
+      - netease_api
+
+  netease_api:
+    image: binaryify/netease_cloud_music_api
+    container_name: netease_api
+    ports:
+      - "3000:3000"
