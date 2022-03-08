@@ -47,11 +47,18 @@ Docker容器部署方式
 2. **Docker Compose部署方式**
 
    ``` bash
-   # 获取仓库文件
-   git clone https://github.com/a76yyyy/NeteaseMusicWeb-Docker
-   cd NeteaseMusicWeb-Docker
+   # 创建并切换至 netease 目录
+   mkdir -p $(pwd)/netease && cd $(pwd)/netease
+   # 下载 docker-compose.yml
+   wget https://cdn.jsdelivr.net/gh/a76yyyy/NeteaseMusicWeb-Docker@main/docker-compose.yml
+   wget https://cdn.jsdelivr.net/gh/a76yyyy/NeteaseMusicWeb-Docker@main/Dockerfile
    # 根据需求和配置描述修改配置环境变量
    vi ./docker-compose.yml
    # 执行 Docker Compose 命令
    docker-compose up -d --build
    ```
+   > DockerHub仓库的镜像所需后端API地址为 http://localhost:3000 ; 
+
+   > 如果没有搭建后端镜像或者API地址不为上述地址，请使用 `docker-compose` 方式**修改配置后部署**, 
+   > 
+   > **请勿使用 `docker pull a76yyyy/netease_music_web` 方式直接拉取镜像**
