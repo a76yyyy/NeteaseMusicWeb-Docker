@@ -2,7 +2,7 @@
 
 <div align="center">
 
-基于[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)和[Vue-NeteaseCloud-WebMusicApp](https://github.com/fudaosheng/Vue-NeteaseCloud-WebMusicApp)建立开箱即用的**Docker镜像**
+基于[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)和[Vue-NeteaseCloud-WebMusicApp](https://github.com/fudaosheng/Vue-NeteaseCloud-WebMusicApp)实现一键部署的**Docker镜像**
 
 [![HomePage][HomePage-image]][HomePage-url]
 [![Github][Github-image]][Github-url]
