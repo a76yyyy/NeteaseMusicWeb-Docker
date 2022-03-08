@@ -19,7 +19,7 @@ jobs:
             with:
               publish: true
               imageName: ghcr.io/a76yyyy/netease_music_web # dockerid/imageName
-              platform: linux/386,linux/arm64,linux/amd64,linux/arm/v6,linux/arm/v7 # 你准备构建的镜像平台
+              platform: linux/arm64,linux/amd64,linux/arm/v7 # 你准备构建的镜像平台
               tag: latest
               dockerServer: ghcr.io
               dockerUser: ${{ secrets.DOCKER_USERNAME }} # dockerServer Username 在setting创建secrets name=DOCKER_USERNAME  value=dockerid
