@@ -18,7 +18,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && npm install -g cnpm http-server \
     && git clone --depth 1 ${GHPROXY}https://github.com/fudaosheng/Vue-NeteaseCloud-WebMusicApp /app/frontend \
     && cd /app/frontend \
-    && sed -i "s/http:\/\/localhost:3000/${BACKSCHEME}:\/\/${BACKURL}/g" src/network/request.js \
+    && sed -i "s/http:\/\/localhost:3000/${API_SCHEME}:\/\/${API_URL}/g" src/network/request.js \
     && cnpm install \
     && npm run build \
     && cp -rf ./dist/* /app/dist \
