@@ -9,6 +9,7 @@ services:
         - API_URL=localhost:3000
         # - GHPROXY=https://ghproxy.com/
     container_name: netease
+    restart: unless-stopped
     ports:
       - "6688:6688"
     environment:
@@ -19,5 +20,6 @@ services:
   netease_api:
     image: binaryify/netease_cloud_music_api
     container_name: netease_api
+    restart: unless-stopped
     ports:
       - "3000:3000"
