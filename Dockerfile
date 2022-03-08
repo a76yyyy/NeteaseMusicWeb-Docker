@@ -7,12 +7,11 @@ LABEL org.opencontainers.image.source=https://github.com/a76yyyy/NeteaseMusicWeb
 
 WORKDIR /app/dist
 
-ENV BACKSCHEME=http
-ENV BACKHOST=localhost
-ENV BACKPORT=3000
+ARG BACKSCHEME=http
+ARG BACKPORT=3000
+ARG BACKURL=localhost:3000
 ENV GHPROXY=
-
-ENV FRONTPORT=6666
+ENV FRONTPORT=6688
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
     && apk add --update --no-cache git \
@@ -24,10 +23,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && npm cache clean --force \
     && git clone --depth 1 ${GHPROXY}https://github.com/fudaosheng/Vue-NeteaseCloud-WebMusicApp /app/frontend \
     && cd /app/frontend \
-    && sed -i 's/http:\/\/localhost:3000/${BACKSCHEME}:\/\/${BACKHOST}:${BACKPORT}/g' src/network/request.js \
+    && sed -i "s/http:\/\/localhost:3000/${BACKSCHEME}:\/\/${BACKURL}/g" src/network/request.js \
     && cnpm install \
     && npm run build \
-    && cp -rf ./dist /app/dist \
+    && cp -rf ./dist/* /app/dist \
     && cd /app/dist \
     && rm -rf /app/frontend \
     && apk del git \

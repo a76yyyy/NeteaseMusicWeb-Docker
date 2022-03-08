@@ -2,14 +2,16 @@ version: "3"
 
 services:
   netease:
-    build: .
+    build: 
+      context: .
+      args:
+        - BACKSCHEME=http
+        - BACKPORT=3000
+        - BACKURL=localhost:3000
     container_name: netease
     ports:
       - "3000:3000"
-      - "6666:6666"
+      - "6688:6688"
     environment:
-      - BACKSCHEME=http
-      - BACKHOST=localhost
-      - BACKPORT=3000
-      - FRONTPORT=6666
+      - FRONTPORT=6688
       # - GHPROXY=https://ghproxy.com/
