@@ -16,7 +16,7 @@
 ![repo size][repo-size-image]
 
 [HomePage-image]: https://img.shields.io/badge/HomePage-NeteaseMusicWeb-brightgreen
-[HomePage-url]: https://163.a76yyyy.cn
+[HomePage-url]: https://music.a76yyyy.cn
 [Github-image]: https://img.shields.io/static/v1?label=Github&message=NeteaseMusicWeb&color=brightgreen
 [Github-url]: https://github.com/a76yyyy/NeteaseMusicWeb-Docker
 [github-license-image]: https://img.shields.io/github/license/a76yyyy/NeteaseMusicWeb-Docker
